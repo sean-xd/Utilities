@@ -24,6 +24,27 @@ is(x, "String"); //=> true
 console.log(is(x)); //=> "String"
 ```
 
+###sorter (check, backup)
+Lets you use normal functions to sort. I've only needed two dimensions so far, but it could easily be extended to use multiple backups.
+
+```javascript
+var shows = [
+    {title: "Sakurako-san no Ashimoto ni wa Shitai ga Umatteiru", time: 2330},
+    {title: "Taimadou Gakuen 35 Shiken Shoutai", time: 1205},
+    {title: "Diabolik Lovers More, Blood", time: 2330}
+];
+
+shows.sort(sorter(show => show.title, show => show.time));
+
+console.log(shows);
+/*  [
+        {title: "Taimadou Gakuen 35 Shiken Shoutai", time: 1205},
+        {title: "Diabolik Lovers More, Blood", time: 2330},
+        {title: "Sakurako-san no Ashimoto ni wa Shitai ga Umatteiru", time: 2330},
+    ] */
+
+```
+
 ###type (object, shell)
 If called without shell, returns object typed with values. If called with shell, returns object typed without values.
 
