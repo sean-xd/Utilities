@@ -3,6 +3,7 @@ Basic things I use in almost every project.
 
 * [el](#el-element)
 * [is](#is-thing-type)
+* [kyp](#kyp)
 * [sorter](#sorter-check-backup)
 * [t](#t-tag-config)
 * [type](#type-object-shell)
@@ -23,6 +24,16 @@ If called without type, returns type of thing. If called with type, checks type 
 var x = "vim";
 is(x, "String"); //=> true
 console.log(is(x)); //=> "String"
+```
+
+###kyp
+Key press utility. Basically just a dictionary for keyCodes.
+
+```javascript
+var kyp = Kyp();
+
+kyp("enter", function(){console.log("enter pressed.")});
+kyp("tab", function(){/*open sidebar or something*/});
 ```
 
 ###sorter (check, backup)
