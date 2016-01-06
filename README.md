@@ -56,7 +56,6 @@ var content = t("div", {id: "content"})([
     t("p")("Can you hear me?")
 ]);
 ```
-Output
 ```html
 <div id="content">
     <div class="title">Hello</div>
@@ -72,7 +71,6 @@ function navLink(name){
 
 var nav = t("nav")(["home", "blog", "contact"].map(navLink));
 ```
-Output
 ```html
 <nav>
     <a class="nav-link" href="/">home</a>
