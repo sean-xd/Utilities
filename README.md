@@ -3,7 +3,7 @@ Basic things I use in almost every project.
 
 * [el](#el-element)
 * [is](#is-thing-type)
-* [kyp](#kyp)
+* [kyp](#kyp-key-callback)
 * [sorter](#sorter-check-backup)
 * [t](#t-tag-config)
 * [type](#type-object-shell)
@@ -26,7 +26,7 @@ is(x, "String"); //=> true
 console.log(is(x)); //=> "String"
 ```
 
-###kyp
+###kyp (key, callback)
 Key press utility. Basically just a dictionary for keyCodes.
 
 ```javascript
