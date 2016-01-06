@@ -51,14 +51,16 @@ Bare metal dom element creation.
 
 ```javascript
 //Basic
-var title = t("h3")("Hey"),
-    para = t("p")("Sup"),
-    content = t("#content")([title, para]);
+var content = t("div", {id: "content"})([
+    t(".title")("Hello"),
+    t("p")("Can you hear me?")
+]);
 ```
+Output
 ```html
 <div id="content">
-    <h3>Hey</h3>
-    <p>Sup</p>
+    <div class="title">Hello</div>
+    <p>Can you hear me?</p>
 </div>
 ```
 ```javascript
@@ -70,6 +72,7 @@ function navLink(name){
 
 var nav = t("nav")(["home", "blog", "contact"].map(navLink));
 ```
+Output
 ```html
 <nav>
     <a class="nav-link" href="/">home</a>
