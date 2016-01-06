@@ -4,6 +4,7 @@ Basic things I use in almost every project.
 * [el](#el-element)
 * [is](#is-thing-type)
 * [sorter](#sorter-check-backup)
+* [t](#t-tag-config)
 * [type](#type-object-shell)
 
 ###el (element)
@@ -45,6 +46,33 @@ console.log(shows);
 
 ```
 
+###t (tag, config)
+Bare metal dom element creation.
+
+```javascript
+//Basic
+var title = t("h3")("Hey"),
+    para = t("p")("Sup"),
+    content = t("#content")([title, para]),
+/*  <div id="content">
+        <h3>Hey</h3>
+        <p>Sup</p>
+    </div> */
+
+//Advanced
+function navLink(name){
+    var route = (name === "home") ? "/" : "/" + name;
+    return t("a", {href: route || "/" + name})(name);
+}
+
+var nav = t("nav")(["home", "blog", "contact"].map(navLink));
+/*  <nav>
+        <a class="nav-link" href="/">home</a>
+        <a class="nav-link" href="/blog">blog</a>
+        <a class="nav-link" href="/contact">contact</a>
+    </nav> */
+```
+
 ###type (object, shell)
 If called without shell, returns object typed with values. If called with shell, returns object typed without values.
 
@@ -76,3 +104,4 @@ console.log(z);
         }
     } */
 ```
+
