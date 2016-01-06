@@ -53,12 +53,15 @@ Bare metal dom element creation.
 //Basic
 var title = t("h3")("Hey"),
     para = t("p")("Sup"),
-    content = t("#content")([title, para]),
-/*  <div id="content">
-        <h3>Hey</h3>
-        <p>Sup</p>
-    </div> */
-
+    content = t("#content")([title, para]);
+```
+```html
+<div id="content">
+    <h3>Hey</h3>
+    <p>Sup</p>
+</div>
+```
+```javascript
 //Advanced
 function navLink(name){
     var route = (name === "home") ? "/" : "/" + name;
@@ -66,11 +69,13 @@ function navLink(name){
 }
 
 var nav = t("nav")(["home", "blog", "contact"].map(navLink));
-/*  <nav>
-        <a class="nav-link" href="/">home</a>
-        <a class="nav-link" href="/blog">blog</a>
-        <a class="nav-link" href="/contact">contact</a>
-    </nav> */
+```
+```html
+<nav>
+    <a class="nav-link" href="/">home</a>
+    <a class="nav-link" href="/blog">blog</a>
+    <a class="nav-link" href="/contact">contact</a>
+</nav>
 ```
 
 ###type (object, shell)
