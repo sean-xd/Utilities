@@ -1,12 +1,22 @@
 #Utilities
 Basic things I use in almost every project.
 
+* [c](#c-cb-a)
 * [el](#el-element)
 * [is](#is-thing-type)
 * [kyp](#kyp-key-callback)
 * [sorter](#sorter-check-backup)
 * [t](#t-tag-config)
 * [type](#type-object-shell)
+
+###c (cb, a)
+Function argument proxy.
+
+```javascript
+function add(x, y){return x + y;}
+
+var arr = [5, 10, 15].map(c(add, 5)); //=> [10,15,20]
+```
 
 ###el (element)
 Element selector.
