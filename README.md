@@ -9,7 +9,7 @@ Basic things I use in almost every project.
 * [t](#t-tag-config)
 * [type](#type-object-shell)
 
-###c (cb, a)
+###c (callback, arg)
 Function argument proxy.
 
 ```javascript
@@ -56,7 +56,7 @@ var shows = [
     {title: "Diabolik Lovers More, Blood", time: 2330}
 ];
 
-shows.sort(sorter(show => show.title, show => show.time));
+shows.sort(sorter(show => show.time, show => show.title));
 
 console.log(shows);
 /*  [
