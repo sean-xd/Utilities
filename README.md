@@ -6,7 +6,6 @@ Basic things I use in almost every project.
 * [is](#is-thing-type)
 * [kyp](#kyp-key-callback)
 * [sorter](#sorter-check-backup)
-* [t](#t-tag-config)
 * [type](#type-object-shell)
 
 ###c (callback, arg)
@@ -65,39 +64,6 @@ console.log(shows);
         {title: "Sakurako-san no Ashimoto ni wa Shitai ga Umatteiru", time: 2330},
     ] */
 
-```
-
-###t (tag, config)
-Bare metal dom element creation.
-
-```javascript
-//Basic
-var content = t("div", {id: "content"})([
-    t(".title")("Hello"),
-    t("p")("Can you hear me?")
-]);
-```
-```html
-<div id="content">
-    <div class="title">Hello</div>
-    <p>Can you hear me?</p>
-</div>
-```
-```javascript
-//Advanced
-function navLink(name){
-    var route = (name === "home") ? "/" : "/" + name;
-    return t("a", {href: route || "/" + name})(name);
-}
-
-var nav = t("nav")(["home", "blog", "contact"].map(navLink));
-```
-```html
-<nav>
-    <a class="nav-link" href="/">home</a>
-    <a class="nav-link" href="/blog">blog</a>
-    <a class="nav-link" href="/contact">contact</a>
-</nav>
 ```
 
 ###type (object, shell)
