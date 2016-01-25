@@ -2,6 +2,7 @@
 Basic things I use in almost every project.
 
 * [c](#c-cb-a)
+* [dataBind](#dataBind-element-state-property)
 * [el](#el-element)
 * [is](#is-thing-type)
 * [kyp](#kyp-key-callback)
@@ -15,6 +16,18 @@ Function argument proxy.
 function add(x, y){return x + y;}
 
 var arr = [5, 10, 15].map(c(add, 5)); //=> [10,15,20]
+```
+
+###dataBind (element, state, property)
+Changes to property of state update element textContent.
+
+```javascript
+var state = {test: "ok"};
+var element = t("div")();
+dataBind(element, state, "test");
+console.log(element); //=> <div>ok</div>
+state.test = "cool";
+console.log(element); //=> <div>cool</div>
 ```
 
 ###el (element)
