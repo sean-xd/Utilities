@@ -6,7 +6,9 @@ Basic things I use in almost every project.
 * [el](#el-element)
 * [is](#is-thing-type)
 * [kyp](#kyp-key-callback)
+* [m](#m-markdown)
 * [sorter](#sorter-check-backup)
+* [t](#t-tag-config)
 * [type](#type-object-shell)
 
 ###c (callback, arg)
@@ -58,6 +60,33 @@ kyp("enter", function(){console.log("enter pressed.")});
 kyp("tab", function(){/*open sidebar or something*/});
 ```
 
+###m (markdown)
+Turns markdown into an HTML fragment.
+
+```javascript
+var exit = "``" + "`";
+
+var marks = `###m (markdown)
+Turns markdown into an HTML fragment.
+
+${exit}javascript
+    var inception = "wow";
+${exit}
+`;
+
+var frag = m(marks);
+```
+
+```html
+#document-fragment
+<h3>m (markdown)</h3>
+<p>Turns markdown into an HTML fragment.</p>
+<p></p>
+<pre><code>
+    var inception = "wow";
+</code></pre>
+```
+
 ###sorter (check, backup)
 Lets you use normal functions to sort. I've only needed two dimensions so far, but it could easily be extended to use multiple backups.
 
@@ -77,6 +106,39 @@ console.log(shows);
         {title: "Sakurako-san no Ashimoto ni wa Shitai ga Umatteiru", time: 2330},
     ] */
 
+```
+
+###t (tag, config)
+Bare metal dom element creation.
+
+```javascript
+//Basic
+var content = t("div", {id: "content"})([
+    t(".title")("Hello"),
+    t("p")("Can you hear me?")
+]);
+```
+```html
+<div id="content">
+    <div class="title">Hello</div>
+    <p>Can you hear me?</p>
+</div>
+```
+```javascript
+//Advanced
+function navLink(name){
+    var route = (name === "home") ? "/" : "/" + name;
+    return t("a", {href: route || "/" + name})(name);
+}
+
+var nav = t("nav")(["home", "blog", "contact"].map(navLink));
+```
+```html
+<nav>
+    <a class="nav-link" href="/">home</a>
+    <a class="nav-link" href="/blog">blog</a>
+    <a class="nav-link" href="/contact">contact</a>
+</nav>
 ```
 
 ###type (object, shell)
