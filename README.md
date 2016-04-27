@@ -173,3 +173,25 @@ console.log(z);
     } */
 ```
 
+###waitFor (num, fn, check)
+Returns a function that when fed a number of data points will call a given function with all of the data.
+
+```javascript
+var magic = waitFor(2, (one, two) => {
+  console.log(one + two);
+});
+magic(5);
+magic(10); //=> 15
+```
+
+Generally intended to be used for http requests.
+
+```javascript
+var magic = waitFor(2, arr => {
+  // Do stuff with both results.
+}, 1);
+
+h("sean.mu/data/test", function(){magic(this.responseText)});
+h("sean.mu/data/test2", function(){magic(this.responseText)});
+// Whichever returns second will call the passed in function with data as an array.
+```
