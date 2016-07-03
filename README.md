@@ -4,9 +4,11 @@ Basic things I use in almost every project.
 * [c](#c-cb-a)
 * [dataBind](#dataBind-element-state-property)
 * [el](#el-element)
+* encrypt
 * [is](#is-thing-type)
 * [kyp](#kyp-key-callback)
 * [m](#m-markdown)
+* magic
 * [sorter](#sorter-check-backup)
 * [t](#t-tag-config)
 * [type](#type-object-shell)
