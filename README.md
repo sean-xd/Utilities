@@ -173,12 +173,12 @@ console.log(z);
     } */
 ```
 
-###waitFor (num, fn, check)
+###Magic (num, args, fn)
 Returns a function that when fed a number of data points will call a given function with all of the data.
 
 ```javascript
-var magic = waitFor(2, (one, two) => {
-  console.log(one + two);
+var magic = Magic(2, [], data => {
+  console.log(data[0] + data[1]);
 });
 magic(5);
 magic(10); //=> 15
@@ -187,11 +187,11 @@ magic(10); //=> 15
 Generally intended to be used for http requests.
 
 ```javascript
-var magic = waitFor(2, arr => {
+var magic = Magic(2, [], data => {
   // Do stuff with both results.
 }, 1);
 
-h("sean.mu/data/test", function(){magic(this.responseText)});
-h("sean.mu/data/test2", function(){magic(this.responseText)});
+http("get", "sean.mu/data/test", e => magic(e.responseText));
+http("get", "sean.mu/data/test2", e => magic(e.responseText));
 // Whichever returns second will call the passed in function with data as an array.
 ```

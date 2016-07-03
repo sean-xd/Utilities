@@ -1,1 +1,3 @@
-function c(cb, a){return b => cb(a, b)}
+function c(cb, a){
+  return b => cb(a, b);
+}
